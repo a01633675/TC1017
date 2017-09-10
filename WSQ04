@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+  int x, y, total, valor, ciclos;
+
+  cout<<"Por favor ingrese el número más bajo"<<endl;
+  cin>>x;
+  cout<<"Por favor ingrese el número más alto"<<endl;
+  cin>>y;
+  total=0;
+  ciclos=0;
+
+  if(x<y){
+    do{
+      total=total+x;
+      x=x+1;
+      ciclos=ciclos+1;
+    }
+    while (x<=y);
+    cout<<"La suma del rango de números entre "<<x-ciclos<<" y "<<y<<" es "<<total<<endl;
+  }
+  else{
+    cout<<"Error al insertar el orden de los valores"<<endl;
+  }
+  return 0;
+}
