@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  int numero1, numero2;    //Declarar las variables
+  cout <<"Por favor ingrese el primer valor"<< endl;   //Pedir el primer numero al usuario
+  cin >>numero1;   //Entrada del primer numero
+
+  cout <<"Por favor ingrese el segundo valor"<< endl;   //Pedir el segundo numero al usuario
+  cin >>numero2;   //Entrada del segundo numero
+
+  cout <<"La suma de los numeros "<<numero1<<"+"<<numero2<<" = "<<numero1+numero2<< endl;  //Suma de numeros
+  cout <<"La resta de los numeros "<<numero1<<"-"<<numero2<<" = "<<numero1-numero2<< endl;   //Resta de numeros
+  cout <<"La multiplicacion de los numeros "<<numero1<<"*"<<numero2<<" = "<<numero1*numero2<< endl;  //Multiplicacion de numeros
+  cout <<"La division de los numeros "<<numero1<<"/"<<numero2<<" = "<<numero1/numero2<< endl;  //Division de numeros
+  cout <<"El resudio de los numeros "<<numero1<<"/"<<numero2<<" = "<<numero1%numero2<< endl;   //Residuo de numeros
+
+  return 0;
+}
