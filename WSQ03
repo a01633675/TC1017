@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main ()
+{
+  int secret, opt, intentos;        //Nombrar variables de numero secreto, numero adivinado e intentos
+  srand(time(NULL));                //Inicializar el numero aleatorio
+  secret=rand()%100+1;              //Elegir un rango de 1 al 100
+  intentos=0;
+  cout<<"Elegí un número entre 1 y 100 ¿Crees poder adivinarlo?"<<endl;
+  cin>>opt;
+    do
+    {
+      if (opt<secret)
+      {
+        cout<<"El número es muy pequeño, ¡Intenta con uno más alto!"<<endl;
+      }
+      else
+      {
+        cout<<"El número es muy grande, ¡Intenta con uno más pequeño!"<<endl;
+      }
+      cin>>opt;
+      intentos=intentos+1;          //Numero de intentos
+    }
+    while (opt!=secret);
+    cout<<"¡Excelente, tu número era "<<secret<<"!"<<endl;
+    cout<<"Tu número de intentos fue "<<intentos<<endl;
+  return 0;
+}
