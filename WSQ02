@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  int far;    //Valor de en grados fahrenheit
+
+  cout <<"Por favor ingrese el valor en Grados Fahrenheit"<< endl;   //Pedir el valor en grados fahrenheit
+  cin>>far;   //Entrada del valor
+
+  int celc = 5*(far-32)/9;  //Declaracion de variable Celsius
+
+  cout <<"La temperatura de "<<far<<" Grados Fahrenheit es igual a "<< celc <<" Grados Celsius"<< endl;   //Formula que convierte de grados F a grdos C
+
+  if(celc>=100){                             //Condicional para saber si hirve el agua
+    cout << "El agua hirve a "<<celc<<" Grados Celsius bajo condiciones normales"<< endl;
+  } else {
+    cout <<"El agua no hirve a "<<celc<<" Grados Celsius bajo condiciones normales"<< endl;
+  }
+  return 0;
+}
