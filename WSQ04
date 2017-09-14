@@ -4,8 +4,8 @@ using namespace std;
 int main (){
   int x, y, total, valor, ciclos;
 
-  cout<<"Por favor ingrese el número más bajo"<<endl;
-  cin>>x;
+  cout << "Por favor ingrese el número más bajo" << endl;
+  cin >> x;
   cout<<"Por favor ingrese el número más alto"<<endl;
   cin>>y;
   total=0;
