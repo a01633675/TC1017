@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int suma(int x, int y){      //Declarar funcion suma
+  return x+y;
+}
+int resta(int x, int y){     //Declarar funcion resta
+  return x-y;
+}
+int multiplicacion(int x, int y){      //Declarar funcion multiplicacion
+  return x*y;
+}
+int division(int x, int y){         //Declarar funcion division
+  return x/y;
+}
+int mod(int x, int y){           //Declarar funcion mod
+  return x%y;
+}
+int main(){
+  int x, y;
+  cout << "Por favor ingrese el primer número" << endl;
+  cin >> x;
+  cout << "Por favor ingrese el segundo número" << endl;
+  cin >> y;
+
+  cout << "La suma de los números es " << suma(x, y) << endl;
+  cout << "La resta de los números es " << resta(x, y) << endl;
+  cout << "La multiplicación de los números es " << multiplicacion(x, y) << endl;
+  cout << "La división de los números es " << division(x, y) << endl;
+  cout << "El residuo de los números es " << mod(x, y) << endl;
+  return 0;
+}
