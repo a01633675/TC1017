@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int factorial(int n){
+  if(n>0){
+  int recurse = factorial(n-1);
+  int result = n*recurse;
+  return result;
+  }
+  else{
+    return 1;
+  }
+}
+int main(){
+  char decision;
+  do{
+    int n;
+    cout << "Por favor ingrese un número" << endl;
+    cin >> n;
+    cout << "El factorial de " << n << " es " << factorial(n) << endl;
+    cout << "¿Quieres volver a intentarlo? (y-Yes / n-No)" << endl;
+    cin >> decision;
+  }
+  while(decision=='y');
+    cout << "¡Hasta la próxima!" << endl;
+  return 0;
+}
