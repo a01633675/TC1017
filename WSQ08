@@ -1,0 +1,60 @@
+#include <cstring>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+#include "BigIntegerLibrary.hh"
+
+bool is_palindrome(BigInteger copy){
+  std::string s1 = bigIntegerToString(copy);
+  string s2 = s1;
+  reverse(s2.begin(), s2.end());
+  return (s2 == s1);
+}
+
+BigInteger apply196(BigInteger copy){
+  std::string s1 = bigIntegerToString(copy);
+  std::string s2 = s1;
+  reverse(s1.begin(), s1.end());
+  return copy + stringToBigInteger(s1);
+}
+
+int main() {
+  int lower, upper;
+  int palindromes = 0;
+  int non_lychrels = 0;
+  int lychrels = 0;
+  BigInteger copy;
+
+  cout << "Por favor ingrese el primer número de la serie" << endl;
+  cin >> lower;
+  cout << "Por favor ingrese el último número de la serie" << endl;
+  cin >> upper;
+
+  for(int num = lower; num <= upper; num ++){
+    copy = num;
+    if(is_palindrome(copy) == true){
+      palindromes = palindromes + 1;
+    } else {
+      int count = 0;
+      bool islych = true;
+      while(count <= 30){
+        copy = apply196(copy);
+        if(is_palindrome(copy) == true){
+          non_lychrels = non_lychrels + 1;
+          islych = false;
+          break;
+        } else {
+          count = count + 1;
+        }
+      }
+      if (islych){
+        lychrels = lychrels + 1;
+      }
+    }
+  }
+  cout << "El rango de números evaluados va desde " << lower << " hasta " << upper << endl;
+  cout << "El número de Palindromos Naturales es " << palindromes << endl;
+  cout << "El número de No-Lychrels es " << non_lychrels << endl;
+  cout << "El número de Lychrels es " << lychrels << endl;
+return 0;
+}
