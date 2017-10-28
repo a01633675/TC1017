@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+double sqr(double num){
+  double guess = num/2;
+  double x = num;
+  double e = 0.000001;
+  while(x - guess > e) {
+    x = (x + guess)/2;
+    guess = num/x;
+  }
+  return x;
+}
+
+int main(){
+  double num;
+  cout << "Por favor ingrese un número" << endl;
+  cin >> num;
+  cout << "La raíz de " << num << " es igual " << sqr(num) << endl;
+  return 0;
+}
