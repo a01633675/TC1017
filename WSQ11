@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+int findbanana(ifstream &myfile){
+  int count = 0;
+  string line;
+  while(getline (myfile, line)){
+    std :: transform(line.begin(), line.end(), line.begin(), :: tolower);
+    int getbanana = line.find( "banana" );
+    while (getbanana != -1){
+      count++;
+      getbanana = line.find("banana", getbanana +1);
+    }
+  }
+  return count;
+}
+
+int main(){
+  string ban = "bananas";
+  ifstream myfile;
+  myfile.open("fruit.txt");
+  if(!myfile.is_open()){
+    cout << "ERROR: No se puede abrir el archivo" << endl;
+  } else {
+    cout << "El número de " << ban << " en el archivo es: " << findbanana(myfile) << endl;
+  }
+  myfile.close();
+  return 0;
+}
