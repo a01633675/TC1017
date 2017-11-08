@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double factorial(double n){
+  if(n == 0){
+    return 1;
+  } else {
+    double recurse = factorial(n-1);
+    double result = n*recurse;
+    return result;
+  }
+}
+double calculate_e(double precision){
+  double result = 0;
+  for(double loops = precision; loops >= 0; loops --){
+    double fraction = 1 / factorial(loops);
+    result = result + fraction;
+  }
+  return result;
+}
+int main(){
+  double precision;
+  cout << "Por favor ingrese la cantidad de digitos de precisión" << endl;
+  cin >> precision;
+  cout << "El valor de Euler de acuerdo a la precisión elegida es: " << fixed << setprecision (precision-1) << calculate_e(precision) << endl;
+  return 0;
+}
